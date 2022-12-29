@@ -2,6 +2,10 @@
 
 using System.Diagnostics;
 using HealthCheck.Const;
+using HealthCheck.Utility.HealthChecks;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using static System.Int32;
 
 public partial class Program
@@ -9,7 +13,7 @@ public partial class Program
     private static void HealthCheckSetting(WebApplicationBuilder webApplicationBuilder)
     {
         var strCycleSec = Environment.GetEnvironmentVariable("HealthCheckCycleSecond")!;
-        var strTimeOut  = Environment.GetEnvironmentVariable("HealthCheckCycleSecond")!;
+        var strTimeOut  = Environment.GetEnvironmentVariable("HealthCheckTimeOutSecond")!;
         TryParse(strCycleSec, out var cycleSec);
         TryParse(strTimeOut, out var timeOut);
 
@@ -22,6 +26,14 @@ public partial class Program
                                  }
                              )
                              .AddInMemoryStorage();
+
+        //  TimeOut is milliseconds
+        webApplicationBuilder.Services.AddHealthChecks()
+                             .AddCheck("Local Ping", new PingHealthCheck("127.0.0.1", 500))
+                             .AddCheck("Local Ping Fail", new PingHealthCheck("222.222.222.222", 500))
+                             .AddCheck("Local Tcp", new TcpHealthCheck("127.0.0.1", 17000, 500))
+                             .AddCheck("Local Tcp Fail", new TcpHealthCheck("127.0.0.1", 440, 500))
+                             .AddCheck("Google", new PingHealthCheck("www.google.com", 5));
     }
 
     /// <summary>

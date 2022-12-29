@@ -12,10 +12,11 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
+      "launchUrl": "hc-ui",
       "applicationUrl": "https://localhost:35002;http://localhost:35001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "HealthCheckCycleSecond":60,
+        "HealthCheckCycleSecond":5,
         "HealthCheckTimeOutSecond":10
       }
     },
