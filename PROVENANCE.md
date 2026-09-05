@@ -12,6 +12,8 @@ No vendored package source was found in the reviewed tree. Git history
 contains more than one author identity; that fact alone does not establish
 copyright ownership or licensing authority for every file.
 
-No additional license is granted by this branch. A future MIT decision must
-identify the exact repository-authored files and preserve the dependency and
-configuration exclusions.
+Owner authorization confirmed on 2026-09-05 applies only to the exact
+repository-authored paths listed in LICENSE-SCOPE.md. The branch publishes the
+standard MIT text for those paths; runtime/user configuration, external
+dependencies, generated output, services, and unlisted files remain outside
+the grant.
