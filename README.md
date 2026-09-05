@@ -5,12 +5,11 @@ and custom Ping/TCP checks.
 
 ## Rights status
 
-This branch records a proposed MIT scope for the repository-authored sample,
-but grants no additional license until explicitly authorized. NuGet packages,
-the .NET runtime, external services, generated output, and user-provided
-configuration retain their own rights.
+[LICENSES/MIT.txt](LICENSES/MIT.txt) grants MIT only to the exact
+repository-authored source, project, solution, and documentation paths listed
+in [LICENSE-SCOPE.md](LICENSE-SCOPE.md). Runtime/user configuration, external
+packages, generated output, and services retain their own rights.
 
-See [LICENSE-SCOPE.md](LICENSE-SCOPE.md),
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md),
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md),
 [PROVENANCE.md](PROVENANCE.md), and
 [LICENSES/NO-ADDITIONAL-LICENSE.md](LICENSES/NO-ADDITIONAL-LICENSE.md).
